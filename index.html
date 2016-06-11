@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h1>Todo List App</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="form-inline">
+                    <input type="text" class="form-control taskName" placeholder="Task Name">
+                    <input type="date" class="form-control date" placeholder="Due Date">
+                    <button class="addTask btn btn-default">Add Task</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <table class="table table-hover">
+            <thead>
+              <th>Status</th>
+              <th>Task</th>
+              <th>Due Date</th>
+              <th>Modify</th>
+            </thead>
+            <tbody id="tasks">
+            <!--   <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>k</td>
+                <td>dsjfl</td>
+              </tr> -->
+              </tbody>
+            </table>
+            
+          </div>
+        </div>
+        <table>
+        <tr class="template test">
+              <td class="status"><input class="check" type="checkbox"></td>
+              <td class="task"></td>
+              <td class="dueDate"></td>
+              <!-- <td class="remove"></td> -->
+              <td class="remove"><button type="button" class="btn btn-success btn-xs edit"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></button> <button type="button" class="btn btn-danger btn-xs delete">Delete</button></td>
+              
+            </tr>
+            </table>
+</body>
+
+</html>

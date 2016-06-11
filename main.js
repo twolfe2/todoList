@@ -5,7 +5,7 @@ function init() {
   $('.date').datepicker('setDate',currDate);
   // $('.datepicker').datepicker('update', currDate);
   
-  console.log(currDate);
+  // console.log(currDate);
     $('.date').datepicker({
         todayHighlight: true,
         autoclose: true
@@ -16,6 +16,7 @@ function init() {
     $('#tasks').on('click', '.edit', editTask);
     $('#tasks').on('click', '.saveEdit', saveEdit);
     $('#tasks').on('click', '.cancelEdit', cancelEdit);
+    $('.deleteCompleted').on('click',deleteCompleted);
     var tasks = getTasks();
     renderTasks(tasks);
 
@@ -93,7 +94,7 @@ function renderTasks(tasks) {
 function taskComplete() {
     // debugger;
     // debugger;
-    console.log($(this).is(':checked'));
+    // console.log($(this).is(':checked'));
     var index = $(this).closest('tr').index();
     var tasks = getTasks();
     if ($(this).is(':checked')) {
@@ -202,7 +203,7 @@ function saveEdit() {
 
 
 
-    console.log(newTask, newDate);
+    // console.log(newTask, newDate);
 }
 
 function cancelEdit() {
@@ -232,3 +233,19 @@ function cancelEdit() {
 
 
 }
+
+function deleteCompleted() {
+  var tasks = getTasks();
+
+  for(var i = 0; i < tasks.length; i++) {
+    if(tasks[i].isComplete) {
+      tasks.splice(i,1);
+    }
+  }
+  writeTasks(tasks);
+  renderTasks(tasks);
+
+}
+
+
+
